@@ -21,7 +21,7 @@ cp ./vim/padrao.cpp ~/jonatas
 if [ "$OSTYPE" = "linux-gnu" ]; then
   # atom
   ./setatom.sh
-elif [ "$OSTYPE" = "linux-androidabi"]; then
+elif [ "$OSTYPE" = "linux-androideabi" ]; then
   echo "android"
 else
   echo "ok"
