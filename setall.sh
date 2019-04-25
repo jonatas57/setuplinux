@@ -13,10 +13,16 @@ fi
 
 # vim
 ./installpkg.sh vim
+mv ~/.vimrc ~/.oldvimrc
+cp ./vim/.vimrc ~/
+cp ./vim/padrao.cpp ~/jonatas
+
 
 if [ "$OSTYPE" = "linux-gnu" ]; then
   # atom
   ./setatom.sh
+elif [ "$OSTYPE" = "linux-androidabi"]; then
+  echo "android"
 else
   echo "ok"
 fi
