@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 x=$(which $1)
 
@@ -7,4 +7,3 @@ if [ "$x" = "" ]; then
 else
 	echo "true"
 fi
-

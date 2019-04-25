@@ -1,7 +1,7 @@
-#!/usr/bin/zsh
+#!/usr/bin/env bash
 
-if [ "`./search.sh $1`" = "true" ]; then
-	echo "$1 installed"
+if [ "`./search.sh atom`" = "true" ]; then
+	echo "atom installed"
 else
 	wget https://atom.io/download/deb > /dev/null
 	sudo dpkg -i ./deb
