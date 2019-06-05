@@ -3,20 +3,13 @@
 # wget
 ./installpkg.sh wget
 
-# OhMyZsh
-z=$(./installpkg.sh zsh)
-if [ -d ~/.oh-my-zsh ]; then
-  echo "Oh My Zshell installed"
-else
-  sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-fi
-
 # vim
 ./installpkg.sh vim
-mv ~/.vimrc ~/.oldvimrc
+if [ -a ~/.vimrc ] ; then
+  mv ~/.vimrc ~/.oldvimrc
+fi
 cp ./vim/.vimrc ~/
 cp ./vim/padrao.cpp ~/jonatas
-
 
 if [ "$OSTYPE" = "linux-gnu" ]; then
   # atom
@@ -25,4 +18,12 @@ elif [ "$OSTYPE" = "linux-androideabi" ]; then
   echo "android"
 else
   echo "ok"
+fi
+
+# OhMyZsh
+z=$(./installpkg.sh zsh)
+if [ -d ~/.oh-my-zsh ]; then
+  echo "Oh My Zshell installed"
+else
+  sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 fi
